@@ -127,7 +127,7 @@ const StockInput: React.FC<StockInputProps> = ({ onAnalyze, disabled }) => {
 
         <div className="mt-3 text-center">
             <p className="text-xs text-slate-500">
-                💡 仅支持沪深股市代码
+                💡 仅支持沪深股市代码   随机性数值越大，分析及决策越激进
             </p>
         </div>
     </div>
