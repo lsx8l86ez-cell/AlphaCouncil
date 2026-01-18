@@ -182,7 +182,6 @@ export const DEFAULT_AGENTS: Record<AgentRole, AgentConfig> = {
 3. 区分系统性风险和非系统性风险
 **任务**：客观评估整体市场环境，提供风险与机会的平衡视角。
 **输出要求**（Markdown，200字左右）：
-**输出要求**（Markdown，200字左右）：
 - **风险等级**：[低/中/高]（基于实际数据而非主观担忧）
 - **机会窗口**：[明确/一般/有限]（当前市场是否存在可操作机会）
 - **关键变量**：（影响当前市场的1-2个核心因素）
@@ -292,9 +291,15 @@ export const DEFAULT_AGENTS: Record<AgentRole, AgentConfig> = {
 };
 
 // 模型选项定义
+// 注意：模型名称需与各平台 API 文档保持一致
 export const MODEL_OPTIONS = [
+  // Google Gemini 系列
   { provider: ModelProvider.GEMINI, name: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash' },
-  { provider: ModelProvider.GEMINI, name: 'gemini-3-pro-preview', label: 'Gemini 3.0 Pro' },
-  { provider: ModelProvider.DEEPSEEK, name: 'deepseek-chat', label: 'DeepSeek' },
+  { provider: ModelProvider.GEMINI, name: 'gemini-2.0-flash', label: 'Gemini 2.0 Flash' },
+  // DeepSeek 系列
+  { provider: ModelProvider.DEEPSEEK, name: 'deepseek-chat', label: 'DeepSeek V3' },
+  { provider: ModelProvider.DEEPSEEK, name: 'deepseek-reasoner', label: 'DeepSeek-R1 推理' },
+  // 通义千问系列
   { provider: ModelProvider.QWEN, name: 'qwen-plus', label: 'Qwen Plus' },
-];
+  { provider: ModelProvider.QWEN, name: 'qwen-turbo', label: 'Qwen Turbo' },
+] as const;
